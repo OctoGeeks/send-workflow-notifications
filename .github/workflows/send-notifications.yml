@@ -2,7 +2,7 @@ name: Workflow Notifications
 
 on:
   workflow_run:
-    workflows: [*]
+    workflows: [ "Test Workflow" ]
 
 jobs:
   notifications:
