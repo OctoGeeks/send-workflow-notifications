@@ -1,0 +1,14 @@
+name: Workflow Notifications
+
+on:
+  workflow_run:
+    workflows: *
+    branches: *
+
+jobs:
+  notifications:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: cat '${{ github.event_path}}'
