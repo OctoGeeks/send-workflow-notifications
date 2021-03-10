@@ -1,0 +1,16 @@
+workflows:
+- workflow: Master-Build
+  notifications:
+  - email: homer-simpson@gmail.com
+    filter: [ failed ]
+  - email: anderson-silva@github.com
+    filter: [ succeeded, failed ]
+  - email: rickandmorty@contoso.com
+    filter: [ requested, succeeded, failed ]
+    
+- workflow: PR-Build
+  notifications:
+  - email: bart-simpson@hotmail.com
+    filter: [ succeeded, failed ]
+  - email: homer-simpson@gmail.com
+    filter: [ failed ]
