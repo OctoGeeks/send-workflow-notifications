@@ -10,4 +10,4 @@ jobs:
 
     steps:
     - name: Hello World
-      run: exit 1
+      run: echo Hello World
