@@ -4,6 +4,7 @@ using MailKit.Security;
 using MimeKit;
 using SendWorkflowNotifications.Configuration;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,11 @@ namespace SendWorkflowNotifications
 
         static void Main(string[] args)
         {
+            foreach (DictionaryEntry envVar in Environment.GetEnvironmentVariables())
+            {
+                Console.WriteLine($"{envVar.Key}: {envVar.Value}");
+            }
+
             var smtpServer = _core.GetInput("smtp-server");
             var smtpUser = _core.GetInput("smtp-user");
             var smtpPassword = _core.GetInput("smtp-password");
