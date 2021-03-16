@@ -17,6 +17,7 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: echo ${{ inputs }}
     - run: |
         Write-Host (${{ inputs }} | Format-Table | Out-String)
         ${{ github.action_path }}/run-action.ps1
