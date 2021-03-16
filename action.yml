@@ -17,5 +17,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/run-action.ps1
+    - run: |
+        echo ${{ inputs }}
+        ${{ github.action_path }}/run-action.ps1
       shell: pwsh
