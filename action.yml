@@ -17,9 +17,10 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo ${{ inputs }}
-      shell: bash
     - run: |
-        Write-Host (${{ inputs }} | Format-Table | Out-String)
+        $env:INPUT_SMTP-SERVER = '${{ inputs.smtp-server }}'
+        $env:INPUT_SMTP-USER = '${{ inputs.smtp-user }}'
+        $env:INPUT_SMTP-PASSWORD = '${{ inputs.smtp-password }}'
+        $env:INPUT_CONFIGURATION = '${{ inputs.configuration }}'
         ${{ github.action_path }}/run-action.ps1
       shell: pwsh
