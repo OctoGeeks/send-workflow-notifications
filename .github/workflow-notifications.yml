@@ -1,0 +1,10 @@
+workflows:
+- workflow: Test Workflow Failed
+  notifications:
+  - email: dylan-smith@github.com
+    filter: [ requested, succeeded, failed ]
+
+- workflow: Test Workflow Succeeded
+  notifications:
+  - email: dylan-smith@github.com
+    filter: [ requested, succeeded, failed ]

@@ -2,7 +2,7 @@ name: Workflow Notifications
 
 on:
   workflow_run:
-    workflows: [ "Test Workflow" ]
+    workflows: [ "Test Workflow Failed", "Test Workflow Succeeded" ]
 
 jobs:
   notifications:
@@ -10,4 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: cat '${{ github.event_path}}'
+    - uses: actions/checkout@v2
+    - uses: ./
+      with:
+        smtp-server: smtp.gmail.com
+        smtp-user: GitHubRangers@gmail.com
+        smtp-password: ${{ secrets.SMTP_PASSWORD }}
+        configuration: ./.github/workflow-notifications.yml

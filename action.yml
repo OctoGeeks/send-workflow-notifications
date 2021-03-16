@@ -1,0 +1,21 @@
+name: 'Send Workflow Notifications'
+description: 'Send notifications for workflows run based on a YML config file'
+inputs:
+  smtp-server:
+    description: 'The address of the SMTP server to use (e.g. smtp.gmail.com)'
+    required: true
+  smtp-user:
+    description: 'The username to use when authenticating with the SMTP server'
+    required: true
+  smtp-password:
+    description: 'The password to use when authenticating with the SMTP server'
+    required: true
+  configuration:
+    description: 'The path to the YML configuration file'
+    required: true
+    default: ./.github/workflow-notifications.yml
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/run-action.ps1
+      shell: pwsh

@@ -1,0 +1,13 @@
+name: Test Workflow Failed
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Hello World
+      run: exit 1
