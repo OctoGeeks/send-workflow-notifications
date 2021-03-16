@@ -1,3 +1,5 @@
+Get-ChildItem env:* | sort-object name
+
 if($IsWindows -eq $True)
 {
     $filePath = Join-Path $PSScriptRoot "/dist/win-x64/SendWorkflowNotifications.exe"
