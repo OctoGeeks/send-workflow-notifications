@@ -21,11 +21,6 @@ namespace SendWorkflowNotifications
 
         static void Main(string[] args)
         {
-            foreach (DictionaryEntry envVar in Environment.GetEnvironmentVariables())
-            {
-                Console.WriteLine($"{envVar.Key}: {envVar.Value}");
-            }
-
             var smtpServer = _core.GetInput("smtp-server");
             var smtpUser = _core.GetInput("smtp-user");
             var smtpPassword = _core.GetInput("smtp-password");
