@@ -15,12 +15,5 @@ inputs:
     required: true
     default: ./.github/workflow-notifications.yml
 runs:
-  using: "composite"
-  steps:
-    - run: |
-        $env:INPUT_SMTP-SERVER = '${{ inputs.smtp-server }}'
-        $env:INPUT_SMTP-USER = '${{ inputs.smtp-user }}'
-        $env:INPUT_SMTP-PASSWORD = '${{ inputs.smtp-password }}'
-        $env:INPUT_CONFIGURATION = '${{ inputs.configuration }}'
-        ${{ github.action_path }}/run-action.ps1
-      shell: pwsh
+  using: 'node12'
+  main: 'index.js'
