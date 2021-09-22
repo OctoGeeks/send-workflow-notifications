@@ -8,3 +8,6 @@ catch(err) {
   const msg = err.toString().replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A');
   process.stdout.write("::error::" + msg);
 }
+
+process.exitcode = 1;
+process.stdout.write("::error::" + "foo");
