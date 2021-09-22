@@ -19,4 +19,4 @@ Write-Output "Running $filePath..."
 & $filePath
 
 Write-Output "LASTEXITCODE: $LASTEXITCODE"
-return $LASTEXITCODE
+exit $LASTEXITCODE
