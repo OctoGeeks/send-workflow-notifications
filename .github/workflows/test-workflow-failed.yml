@@ -1,4 +1,4 @@
-name: Test Workflow Failed
+name: Test Workflow Failed foo
 
 on:
   workflow_dispatch:
