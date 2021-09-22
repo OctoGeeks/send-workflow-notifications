@@ -14,6 +14,6 @@ jobs:
     - uses: ./
       with:
         smtp-server: smtp.gmail.com
-        smtp-user: GitHubRangers@gmail.com
+        smtp-user: githuboctogeeks@gmail.com
         smtp-password: ${{ secrets.SMTP_PASSWORD }}
         configuration: ./.github/workflow-notifications.yml
