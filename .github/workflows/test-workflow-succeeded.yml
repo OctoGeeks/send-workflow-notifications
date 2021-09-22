@@ -1,4 +1,4 @@
-name: Test Workflow Succeeded foo
+name: Test Workflow Succeeded
 
 on:
   workflow_dispatch:
