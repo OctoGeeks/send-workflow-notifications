@@ -17,4 +17,6 @@ if($IsMacOS -eq $True)
 
 Write-Output "Running $filePath..."
 & $filePath
+
+Write-Output "LASTEXITCODE: $LASTEXITCODE"
 return $LASTEXITCODE
