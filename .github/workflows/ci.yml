@@ -17,14 +17,14 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Hash Repo Binaries
-      run: Write-Output "BINARIES_HASH=${{ hashFiles('./dist/**')" >> $env:GITHUB_ENV
+      run: Write-Output "BINARIES_HASH=${{ hashFiles('./dist/**') }}" >> $env:GITHUB_ENV
       shell: pwsh
     - name: Run Build Script
       run: ./build.ps1
       shell: pwsh
     - name: Compare Binaries Hashes
       run: |
-        $NEW_HASH = "${{ hashFiles('./dist/**')"
+        $NEW_HASH = "${{ hashFiles('./dist/**') }}"
         if ($env:BINARIES_HASH -ne $NEW_HASH) {
           Write-Error "Binary files in repo do not match newly built binaries. Be sure to build and commit the binaries every time you change the source code (using the build.ps1 script)"
         } else {
