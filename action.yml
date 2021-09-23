@@ -1,5 +1,5 @@
 name: 'Send Workflow Notifications'
-description: 'Send notifications for workflows run based on a YML config file'
+description: 'Send email notifications for GitHub Actions workflows based on a YML config file'
 inputs:
   smtp-server:
     description: 'The address of the SMTP server to use (e.g. smtp.gmail.com)'
