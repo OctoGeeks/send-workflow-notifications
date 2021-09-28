@@ -57,3 +57,4 @@ If you're doing this for your company, you likely already have a company email s
 
 Alternatively you can use a gmail account and the SMTP capabilities that gmail provides (there are some limits to how many emails you can send via SMTP per day). To use gmail use smtp.gmail.com as the smtp-server, and your gmail username and password (put the password into a github secret).  You may need to configure the gmail account to allow "less secure apps":
 
+![image](https://user-images.githubusercontent.com/1508559/135171282-1b3eb4bc-0d82-41c5-a1ce-b38375aba698.png)
